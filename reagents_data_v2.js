@@ -2,7 +2,7 @@
 // title: 시약명 / content: 화학식 / manufacturer: 제조사 / location: 보관 위치
 // 분자량: 화학식 기반 계산값 (화학식 없거나 파싱 불가 시 '---')
 // 순도: 원본에 표기된 값 그대로, 표기가 없던 항목은 '98% (추정)'으로 일괄 채움 — 실제 확인된 값이 아니므로 정확도가 중요한 시약은 별도 확인 필요
-const deta = [
+const DATA = [
   { title: "Ferric Oxide", content: "Fe2O3", manufacturer: "Shinyo Pure Chemicals", location: "A시약장", 분자량: "159.69", 순도: "98% (추정)" },
   { title: "Barium carbonate,98%", content: "BaCO3", manufacturer: "Samchun Chemicals", location: "A시약장", 분자량: "197.34", 순도: "98%" },
   { title: "Copper(2) Oxide", content: "CuO", manufacturer: "Reagent& Chemicals", location: "A시약장", 분자량: "79.55", 순도: "98% (추정)" },
