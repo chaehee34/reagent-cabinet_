@@ -293,24 +293,19 @@
   이탤릭으로 표시된 순도는 제품 페이지에서 직접 확인한 값이 아닌 일반 시약등급 추정치입니다.
 </footer>
 
-
-  
 <script src="./reagents_data_v2.js"></script>
 
 <script>
-  
-<script>
-
   const state = { search: '', location: '', manuf: '', sortKey: null, sortDir: 1 };
 
-
-  
   // Build drawer list (locations) with counts
   const locCounts = {};
   DATA.forEach(d => { locCounts[d.location] = (locCounts[d.location]||0)+1; });
+
   const locs = Object.keys(locCounts).sort();
   const drawersEl = document.getElementById('drawers');
   const allBtn = document.createElement('button');
+
   allBtn.className = 'drawer-btn active';
   allBtn.innerHTML = `전체 <span class="drawer-count">(${DATA.length})</span>`;
   allBtn.onclick = () => setLocation('', allBtn);
