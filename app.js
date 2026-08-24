@@ -260,53 +260,6 @@
     els.pagination.appendChild(makeBtn('›', state.page + 1, { disabled: state.page === totalPages }));
   }
 
-  let currentDetailId = null;
-
-  async function openDetail(item) {
-    currentDetailId = item.id;
-    els.detailTag.textContent = `No. ${item.no}`;
-    els.detailTitle.textContent = item.title;
-    els.detailFormula.textContent = item.content;
-    els.detailMw.textContent = item.분자량 === '---' ? '—' : item.분자량;
-    els.detailPurity.textContent = item.순도;
-    els.detailManuf.textContent = item.manufacturer;
-    els.detailLoc.textContent = item.location;
-
-    els.memoTextarea.value = '…불러오는 중';
-    els.memoTextarea.disabled = true;
-    els.memoStatus.textContent = '';
-
-    els.detailOverlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-
-    const note = await window.NoteStorage.getNote(item.id);
-    els.memoTextarea.disabled = false;
-    els.memoTextarea.value = note || '';
-    els.memoStatus.textContent = note && note.trim() ? '저장된 메모 있음' : '저장된 메모 없음';
-  }
-
-  function closeDetail() {
-    els.detailOverlay.hidden = true;
-    document.body.style.overflow = '';
-    currentDetailId = null;
-  }
-
-  async function saveMemo() {
-    if (currentDetailId === null) return;
-    const text = els.memoTextarea.value;
-    els.memoSave.disabled = true;
-    els.memoSave.textContent = '저장 중…';
-    const ok = await window.NoteStorage.setNote(currentDetailId, text);
-    els.memoSave.disabled = false;
-    els.memoSave.textContent = '메모 저장';
-    els.memoStatus.textContent = ok
-      ? (text.trim() ? '저장됨' : '저장됨 (빈 메모)')
-      : '저장 실패 — 다시 시도해주세요';
-
-    const dot = els.tableBody.querySelector(`[data-memo-dot="${currentDetailId}"]`);
-    if (dot) dot.classList.toggle('filled', !!text.trim());
-  }
-
   function escapeHtml(str) {
     if (str === null || str === undefined) return '';
     return String(str)
