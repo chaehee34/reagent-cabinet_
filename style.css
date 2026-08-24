@@ -527,3 +527,7 @@ button, input, select, textarea {
   .detail-grid { grid-template-columns: 1fr; }
   .detail-field:nth-child(5) { grid-column: auto; }
 }
+
+[hidden] {
+  display: none !important;
+}
