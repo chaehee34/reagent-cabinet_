@@ -2,7 +2,13 @@
 // title: 시약명 / content: 화학식 / manufacturer: 제조사 / location: 보관 위치
 // 분자량: 화학식 기반 계산값 (화학식 없거나 파싱 불가 시 '---')
 // 순도: 원본에 표기된 값 그대로, 표기가 없던 항목은 '98% (추정)'으로 일괄 채움 — 실제 확인된 값이 아니므로 정확도가 중요한 시약은 별도 확인 필요
+
+//데이터 추가 및 수정 방법
+//{ title: "(시약명)", content: "(화학식명)", manufacturer: "(제조사)", location: "(시약장위치)", 분자량: "(분자량)", 순도: "(순도)" },
+//위의 틀이 기본 틀입니다. 정보 작성 하시고 "//아래에 데이터 추가하세요."라고 주석 달아둔 부분 아래에 추가하시면 됩니다.
 const reagents = [
+
+  // 아래에 데이터 추가하세요.
   { title: "Ferric Oxide", content: "Fe2O3", manufacturer: "Shinyo Pure Chemicals", location: "A시약장", 분자량: "159.69", 순도: "98% (추정)" },
   { title: "Barium carbonate,98%", content: "BaCO3", manufacturer: "Samchun Chemicals", location: "A시약장", 분자량: "197.34", 순도: "98%" },
   { title: "Copper(2) Oxide", content: "CuO", manufacturer: "Reagent& Chemicals", location: "A시약장", 분자량: "79.55", 순도: "98% (추정)" },
@@ -868,6 +874,8 @@ const reagents = [
   { title: "Tetramethyl orthosilicate", content: "C4H1294Si", manufacturer: "Aldrich", location: "냉장고", 분자량: "1380.48", 순도: "98.0%" },
   { title: "Iron(0) pentacarbonyl", content: "Fe(CO)5", manufacturer: "Aldrich", location: "냉장고", 분자량: "195.89", 순도: "98% (추정)" },
   { title: "Iron(0) pentacarbonyl", content: "Fe(CO)5", manufacturer: "Aldrich", location: "냉장고", 분자량: "195.89", 순도: "99.999%" },
+
+  //이 위에 추가하셔야 합니다.
 ];
 
 if (typeof module !== 'undefined') { module.exports = reagents; }
